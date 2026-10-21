@@ -1,0 +1,62 @@
+body {
+    margin: 0 ;
+    font-family: Montserrat, sans-serif;
+    background-color: #040404; 
+    color: #1ecf12;
+    text-align: center;
+}
+main {
+    background-color: #000000;
+    max-width: 1000px;
+    margin : 0 auto;
+    padding: 20px 16px;
+    text-align: center;
+}
+h1 {
+   color: #ffffff;
+}
+.card {
+background-color: #ffffff;
+border: 2px solid #04fc25;
+border-radius: 10px;
+margin-bottom: 20px;
+padding: 14px 16px;
+color: #ffffff;
+}
+.card h4 {
+margin: 0 0 4px 0;
+color:#4a931c;
+}
+.card p {
+margin: 0;
+color: #123456;
+}
+.destaque {
+border-color: #00d9ff;
+background-color: #c0eef4;
+}
+.destaque h3{
+color: #02670c;
+}
+.desatualizado {
+opacity: 0.5;
+}
+.desatualizado h4{
+text-decoration: line-through;
+}
+#semana{
+background-color: #04fc25;
+border: none;
+text-align: center;
+height :100px;
+}
+#semana h3{
+color: #2d03ff;
+}
+#semana h4{
+color: #000000;
+}
+#semana p{
+color: #000000;
+}
+

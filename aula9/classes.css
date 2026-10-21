@@ -1,0 +1,49 @@
+body {
+    margin: 0 ;
+    font-family: Montserrat, sans-serif;
+    background-color: #ffffff; 
+    color: #333333;
+}
+main {
+    max-width: 500px;
+    margin : 0 auto;
+    padding: 20px 16px;
+}
+h1 {
+   color: #6f4e37;
+}
+.card {
+background-color: #ffffff;
+border: 2px solid #d68e08;
+border-radius: 10px;
+margin-bottom: 20px;
+padding: 14px 16px;
+color: #ffffff;
+}
+.card h4 {
+margin: 0 0 4px 0;
+color:#b5651d;
+}
+.card p {
+margin: 0;
+color: #123456;
+}
+.destaque {
+border-color: #ba8a8d;
+background-color: #fff4f4;
+}
+.esgotado {
+opacity: 0.5;
+}
+.esgotado h4{
+text-decoration: line-through;
+}
+#promo-dia{
+background-color: #d59109;
+border: none;
+text-align: center;
+}
+#promodia h4{
+color: #ffffff;
+}
+
