@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Cafeteria Grão Dourado — Conheça nosso café</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ===== TOPO ===== -->
+    <header class="hero">
+      <span class="selo">☕ Café especial</span>
+      <h1>Grão Dourado: café com calma, do grão à xícara</h1>
+      <p>Veja como preparamos, ouça nossa vinheta e confira o cardápio completo. Tudo em um só lugar.</p>
+
+      <ul class="atalhos">
+        <li><a>Vídeo</a></li>
+        <li><a>Vinheta</a></li>
+        <li><a>YouTube</a></li>
+        <li><a>Cardápio</a></li>
+      </ul>
+    </header>
+
+    <main class="grade">
+
+      <!-- ===== VÍDEO ===== -->
+      <section class="card larga" id="video">
+        <div class="card-topo">
+          <span class="card-icone">🎬</span>
+          <div>
+            <h2>Nosso video</h2>
+          </div>
+        </div>
+        <div class="card-corpo">
+          <video width="640" height="360" controls poster="imagem/poster.png" preload="metadata">
+            <source src="video/cafe.mp4" type="video/mp4">
+            <source src="video/cafe.webm" type="video/webm">
+            <track src="video/legenda.vtt" kind="subtitles" srclang="pt" label="Português" default>
+            Seu navegador não suporta vídeo.
+            <a href="video/cafe.mp4">Baixe o vídeo (MP4)</a>.
+          </video>
+        </div>
+        <div class="card-rodape">Legendas em português disponíveis no botão CC do player.</div>
+      </section>
+
+      <!-- ===== ÁUDIO ===== -->
+      <section class="card" id="audio">
+        <div class="card-topo">
+          <span class="card-icone">🎵</span>
+          <div>
+            <h2>Ouça nossa vinheta</h2>
+          </div>
+        </div>
+        <div class="card-corpo">
+          <audio controls>
+            <source src="audio/jingle.mp3" type="audio/mpeg">
+            <source src="audio/jingle.ogg" type="audio/ogg">
+            Seu navegador não suporta áudio.
+            <a href="audio/jingle.mp3">Baixe a vinheta (MP3)</a>.
+          </audio>
+        </div>
+      </section>
+
+      <!-- ===== YOUTUBE ===== -->
+      <section class="card" id="youtube">
+        <div class="card-topo">
+          <span class="card-icone">▶️</span>
+          <div>
+            <h2>Assista no YouTube</h2>
+          </div>
+        </div>
+        <div class="card-corpo">
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/Er1bfEOCogs?si=Pe7WMB3h1_-1fSg3"
+            title="Vídeo do YouTube da Cafeteria Grão Dourado"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            loading="lazy"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ===== PDF ===== -->
+      <section class="card larga" id="cardapio">
+        <div class="card-topo">
+          <span class="card-icone">📖</span>
+          <div>
+            <h2>Escolha seu café</h2>
+            <p>Cardápio completo</p>
+          </div>
+        </div>
+        <div class="card-corpo">
+          <object data="docs/cardapio.pdf" type="application/pdf" width="640" height="400">
+            Seu navegador não mostra PDF aqui.
+            <a href="docs/cardapio.pdf">Abra o cardápio em PDF</a>.
+          </object>
+        </div>
+        <div class="card-rodape">
+       <a class="botao" href="docs/cardapio.pdf" target="_blank" rel="noopener">Abrir cardápio</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+   
+    </footer>
+
+  </div>
+
+</body>
+</html>

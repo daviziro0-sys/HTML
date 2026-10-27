@@ -1,0 +1,243 @@
+/* ==========================================================
+   Cafeteria Grão Dourado — style.css (versão em caixas)
+   ========================================================== */
+
+:root {
+  --fundo:      #1a110d;
+  --caixa:      #271a14;
+  --caixa-2:    #33231b;
+  --borda:      #4a362a;
+  --ouro:       #e3a73a;
+  --ouro-claro: #f2c97a;
+  --texto:      #f6ede0;
+  --texto-2:    #c7b7a3;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto:  "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --raio: 20px;
+  --largura: 1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background:
+    radial-gradient(800px 420px at 90% -5%, rgba(227,167,58,.16), transparent 60%),
+    var(--fundo);
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: min(100% - 2rem, var(--largura));
+  margin-inline: auto;
+}
+
+/* ---------- Topo (hero em caixa) ---------- */
+.hero {
+  margin-top: clamp(1rem, 4vw, 2.5rem);
+  padding: clamp(1.75rem, 5vw, 3.5rem);
+  background: linear-gradient(135deg, var(--caixa-2), var(--caixa));
+  border: 1px solid var(--borda);
+  border-radius: calc(var(--raio) + 8px);
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,.8);
+}
+
+.hero .selo {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .35rem .9rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ouro-claro);
+  background: rgba(227,167,58,.12);
+  border: 1px solid rgba(227,167,58,.4);
+  border-radius: 999px;
+}
+
+.hero h1 {
+  margin: 0 0 .8rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6.5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.hero p {
+  margin: 0 0 1.6rem;
+  max-width: 56ch;
+  color: var(--texto-2);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+/* menu de atalhos */
+.atalhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atalhos a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem 1.1rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+ 
+}
+/* ---------- Grade de caixas ---------- */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-block: 1.5rem 3rem;
+}
+
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--caixa);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -28px rgba(0,0,0,.9);
+}
+
+.card.larga { grid-column: 1 / -1; }
+
+.card-topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--caixa-2);
+  border-bottom: 1px solid var(--borda);
+}
+
+.card-icone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  background: var(--fundo);
+  border: 1px solid var(--ouro);
+  border-radius: 14px;
+}
+
+.card-topo h2 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.card-topo p {
+  margin: .15rem 0 0;
+  font-size: .95rem;
+  color: var(--texto-2);
+}
+
+.card-corpo {
+  flex: 1;
+  padding: 1.4rem;
+}
+
+.card-rodape {
+  padding: .9rem 1.4rem;
+  font-size: .92rem;
+  color: var(--texto-2);
+  border-top: 1px dashed var(--borda);
+}
+
+/* ---------- Mídia dentro das caixas ---------- */
+video, iframe, object, audio {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+video, iframe {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 0;
+  border-radius: 12px;
+}
+
+audio {
+  height: 56px;
+  border-radius: 999px;
+  color-scheme: dark;
+  accent-color: var(--ouro);
+}
+
+object {
+  height: clamp(420px, 70vh, 720px);
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+}
+
+/* ---------- Links ---------- */
+a { color: var(--ouro-claro); text-underline-offset: .2em; }
+a:hover { color: var(--ouro); }
+
+.botao {
+  display: inline-block;
+  padding: .55rem 1.1rem;
+  color: var(--fundo);
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--ouro);
+  border-radius: 999px;
+  transition: background .2s;
+}
+.botao:hover { background: var(--ouro-claro); color: var(--fundo); }
+
+video a, audio a, object a { display: inline-block; margin: 1rem; }
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: .95rem;
+  color: var(--texto-2);
+  background: var(--caixa);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+/* ---------- Acessibilidade ---------- */
+:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; }
+::selection { background: var(--ouro); color: var(--fundo); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 760px) {
+  .grade { grid-template-columns: 1fr; }
+  .card-topo { padding: 1rem; }
+  .card-corpo { padding: 1rem; }
+}
