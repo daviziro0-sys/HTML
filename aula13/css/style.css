@@ -127,7 +127,7 @@ body {
 
 .figura_secao img {
   display: block;
-  width: 300px;         /* acompanha a largura da coluna */
+  width: 565px;         /* acompanha a largura da coluna */
   max-width: 565px;    
   height: auto;       
   margin: 0 auto;
@@ -136,7 +136,8 @@ body {
 
 
 .figura_triforce img {
-  width: 200px;
+  width: 350px;
+  height: auto;
   max-width: 478px;
 }
 
