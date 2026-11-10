@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head><link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="manifest" href="site.webmanifest" />
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800&display=swap">
+    <link rel="stylesheet" href="style.css">
     <title>Diretorio de Arquivos de Aulas</title>
 </head>
-<body bgcolor="#db4848">
+<body>
     <header>
         <h1>Diretorio de Arquivos de Aulas</h1>
     </header>
     <main>
         <h2>Arquivos de aula</h2>
-       <a href="aula1/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula1</button></a>
-         <a href="aula2/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula2</button></a>
-          <a href="aula3/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula3</button></a>
-           <a href="aula4/texto.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula4</button></a>
-             <a href="aula5/paleta.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula5</button></a>
-              <a href="aula6/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula6</button></a>
-              <a href="aula7/tabela.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula7</button></a>
-              <a href="aula8/principal.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula8</button></a>
-              <a href="aula9/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula9</button></a>
-                 <a href="aula10/comportamento.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Aula10</button></a>
-                   <a href="aula11/obrigado.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px; font-size: 14;">Aula11</button></a>
-                    <a href="aula12/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px; font-size: 14;">Aula12</button></a>
-                     <a href="aula13/index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px; font-size: 14;">Aula13</button></a>
-    </main>
+        <nav class="aulas" aria-label="Aulas">
+            <a class="aula" href="aula1/index.html"><span class="aula__t">Aula</span><span class="aula__n">1</span></a>
+            <a class="aula" href="aula2/index.html"><span class="aula__t">Aula</span><span class="aula__n">2</span></a>
+            <a class="aula" href="aula3/index.html"><span class="aula__t">Aula</span><span class="aula__n">3</span></a>
+            <a class="aula" href="aula4/texto.html"><span class="aula__t">Aula</span><span class="aula__n">4</span></a>
+            <a class="aula" href="aula5/paleta.html"><span class="aula__t">Aula</span><span class="aula__n">5</span></a>
+            <a class="aula" href="aula6/index.html"><span class="aula__t">Aula</span><span class="aula__n">6</span></a>
+            <a class="aula" href="aula7/tabela.html"><span class="aula__t">Aula</span><span class="aula__n">7</span></a>
+            <a class="aula" href="aula8/principal.html"><span class="aula__t">Aula</span><span class="aula__n">8</span></a>
+            <a class="aula" href="aula9/index.html"><span class="aula__t">Aula</span><span class="aula__n">9</span></a>
+            <a class="aula" href="aula10/comportamento.html"><span class="aula__t">Aula</span><span class="aula__n">10</span></a>
+            <a class="aula" href="aula11/obrigado.html"><span class="aula__t">Aula</span><span class="aula__n">11</span></a>
+            <a class="aula" href="aula12/index.html"><span class="aula__t">Aula</span><span class="aula__n">12</span></a>
+            <a class="aula" href="aula13/index.html"><span class="aula__t">Aula</span><span class="aula__n">13</span></a>
+        </nav>
     </main>
     <footer>
-        <p>&copy; 2026 Diretorio de Arquivos de Aulas. </p><p>Todos os direitos reservados.</p>
+        <p>&copy; 2026 Diretorio de Arquivos de Aulas.</p>
+        <p>Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
