@@ -166,6 +166,10 @@ body {
   color: var(--texto-2);
   border-top: 1px dashed var(--borda);
 }
+.container-botao {
+  text-align: center;
+
+}
 
 /* ---------- Mídia dentro das caixas ---------- */
 video, iframe, object, audio {
@@ -241,3 +245,4 @@ video a, audio a, object a { display: inline-block; margin: 1rem; }
   .card-topo { padding: 1rem; }
   .card-corpo { padding: 1rem; }
 }
+

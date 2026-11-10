@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Texto só para leitores de tela */
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.anotacao {
+  background-color: rgb(244, 248, 19);
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.anotacao p {
+  margin: 8px 0;
+}
+
+/* Cabeçalho (banner) */
+.cabecalho {
+  position: relative;
+  width: 100%;                /* sem isso, o max-height limita a largura */
+  aspect-ratio: 1200 / 300;   /* a altura acompanha a largura do banner */
+  max-height: 300px;
+  padding: 0;
+  background-color: #000;     /* o banner tem bordas pretas, então a emenda some */
+  background-image: url(../imagem/zelda_banner_1200x300.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Barra de navegação: links lado a lado */
+.barra_nav {
+  display: flex;
+  background-color: #333;
+}
+
+.barra_nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Trocar a cor quando o cursor estiver sobre o link */
+.barra_nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Contorno para quem navega pelo teclado */
+.barra_nav a:focus-visible {
+  outline: 3px solid #f68e36;
+  outline-offset: -3px;
+}
+
+/* Coluna: as duas colunas lado a lado */
+.coluna {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Barra lateral: 30% da largura */
+.lateral {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Coluna principal: 70% da largura */
+.principal {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.legenda {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Imagem do Link (barra lateral) */
+.imagem_falsa {
+  background-image: url(../imagem/zelda_principal_660x200.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+/* Itens da lateral (espada, Triforce, escudo) */
+.imagem_falsa2,
+.imagem_falsa21,
+.imagem_falsa22 {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.imagem_falsa2  { background-image: url(../imagem/zelda_lateral_1.png); }
+.imagem_falsa21 { background-image: url(../imagem/zelda_lateral_2.png); }
+.imagem_falsa22 { background-image: url(../imagem/zelda_lateral_3.png); }
+
+/* Imagens das seções (A Lenda de Zelda e A Triforce) */
+.figura_secao {
+  margin: 0 0 16px;
+}
+
+.figura_secao img {
+  display: block;
+  width: 100%;         /* acompanha a largura da coluna */
+  max-width: 565px;    /* tamanho original: não estica e não perde qualidade */
+  height: auto;        /* mantém a proporção */
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* A Triforce tem 478px de largura: limite menor para não ampliar */
+.figura_triforce img {
+  max-width: 478px;
+}
+
+/* Imagem dos personagens */
+.figura_personagens {
+  margin: 0 0 16px;
+}
+
+.figura_personagens img {
+  display: block;
+  width: 100%;         /* acompanha a largura da coluna */
+  max-width: 800px;    /* não estica demais em telas grandes */
+  height: auto;        /* mantém a proporção */
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Rodapé */
+.rodape {
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+  font-size: 22px;
+  font-weight: bold;
+}
+.container-botao {
+  text-align: center;
+
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets e celulares (até 768px): as colunas ficam uma embaixo da outra */
+@media screen and (max-width: 768px) {
+  .coluna {
+    flex-direction: column;
+  }
+
+  .cabecalho {
+    aspect-ratio: 768 / 250;
+    background-image: url(../imagem/zelda_banner_768x250.jpg);
+  }
+}
+
+/* Celulares (até 500px): menu empilhado e imagens próprias para tela pequena */
+@media screen and (max-width: 500px) {
+  .barra_nav {
+    flex-direction: column;
+  }
+
+  .cabecalho {
+    aspect-ratio: 420 / 250;
+    background-image: url(../imagem/zelda_banner_420x250.jpg);
+  }
+
+  .imagem_falsa {
+    background-image: url(../imagem/zelda_principal_388x200.jpg);
+  }
+
+  .imagem_falsa2  { background-image: url(../imagem/zelda_lateral_1-350.png); }
+  .imagem_falsa21 { background-image: url(../imagem/zelda_lateral_2-350.png); }
+  .imagem_falsa22 { background-image: url(../imagem/zelda_lateral_3-350.png); }
+
+  .figura_personagens img,
+  .figura_secao img {
+    border-radius: 0;
+  }
+}

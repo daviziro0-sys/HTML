@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Legend of Zelda - Site de fã</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Anotação -->
+  <div class="anotacao">
+    <p>Diminua a janela do navegador para ver o efeito de responsividade.</p>
+  </div>
+
+  <!-- Cabeçalho (o logo já está na imagem de fundo) -->
+  <header class="cabecalho">
+    <h1 class="oculto">The Legend of Zelda</h1>
+    <p class="oculto">Um site de fã sobre a série, com layout responsivo.</p>
+  </header>
+
+  <!-- Barra de navegação -->
+  <nav class="barra_nav">
+    <a href="#">Início</a>
+    <a href="#historia">A série</a>
+    <a href="#triforce">Triforce</a>
+    <a href="#personagens">Personagens</a>
+  </nav>
+
+  <!-- Layout flexível (conteúdo) -->
+  <div class="coluna">
+
+    <aside class="lateral">
+      <h2>Sobre Hyrule</h2>
+      <p class="legenda">Link, o herói da série:</p>
+      <div class="imagem_falsa" role="img" aria-label="Link segurando espada e escudo"></div>
+      <p>Link é o herói que enfrenta o mal para proteger o reino de Hyrule e a princesa Zelda.</p>
+      <h3>Itens clássicos</h3>
+      <p>Alguns objetos aparecem em quase toda aventura da série.</p>
+      <div class="imagem_falsa2" role="img" aria-label="Espada Master Sword"></div>
+      <div class="imagem_falsa21" role="img" aria-label="Triforce"></div>
+      <div class="imagem_falsa22" role="img" aria-label="Escudo Hylian"></div>
+    </aside>
+
+    <main class="principal">
+      <article id="historia">
+        <h2>A LENDA DE ZELDA</h2>
+        <p class="legenda">Uma das séries mais queridas dos videogames</p>
+        <figure class="figura_secao">
+          <img
+            src="imagem/zelda_ocarina_capa.png"
+            srcset="imagem/zelda_ocarina_capa-320.png 320w,
+                    imagem/zelda_ocarina_capa.png 565w"
+            sizes="(max-width: 768px) calc(100vw - 40px), 565px"
+            alt="Capa do jogo The Legend of Zelda: Ocarina of Time, para Nintendo 64"
+            width="565"
+            height="394"
+            loading="lazy">
+        </figure>
+        <h3>Como tudo começou</h3>
+        <p>
+          The Legend of Zelda foi criada por Shigeru Miyamoto e Takashi Tezuka, da Nintendo.
+          O primeiro jogo chegou ao Japão em 1986 e apresentou ao mundo a ideia de explorar
+          um grande mapa, descobrir itens e resolver enigmas. Desde então, a série ganhou
+          jogos para quase todos os consoles da empresa, de aventuras em visão aérea a
+          mundos abertos em 3D, como Breath of the Wild e Tears of the Kingdom.
+        </p>
+      </article>
+
+      <article id="triforce">
+        <h2>A TRIFORCE</h2>
+        <p class="legenda">O símbolo mais famoso da série</p>
+        <figure class="figura_secao figura_triforce">
+          <img
+            src="imagem/triforce.webp"
+            srcset="imagem/triforce-320.webp 320w,
+                    imagem/triforce.webp 478w"
+            sizes="(max-width: 768px) calc(100vw - 40px), 478px"
+            alt="A Triforce, formada por três triângulos dourados"
+            width="478"
+            height="414"
+            loading="lazy">
+        </figure>
+        <h3>Poder, Sabedoria e Coragem</h3>
+        <p>
+          A Triforce é formada por três triângulos dourados, que representam o Poder,
+          a Sabedoria e a Coragem. Na história da série, ela é uma relíquia sagrada capaz de
+          realizar desejos, e por isso muita gente tenta se apoderar dela.
+        </p>
+      </article>
+
+      <article id="personagens">
+        <h2>PERSONAGENS</h2>
+        <p class="legenda">Os nomes que você mais vai ouvir</p>
+        <figure class="figura_personagens">
+          <img
+            src="imagem/personagens.jpg"
+            srcset="imagem/personagens-500.jpg 500w,
+                    imagem/personagens-1000.jpg 1000w,
+                    imagem/personagens.jpg 2000w"
+            sizes="(max-width: 768px) 100vw, 800px"
+            alt="Link, Princesa Zelda e Ganondorf sobre fundos verde, azul e vermelho"
+            width="2000"
+            height="1414"
+            loading="lazy">
+        </figure>
+        <h3>Link, Zelda e Ganon</h3>
+        <p>
+          <b>Link</b> é o herói, quase sempre silencioso, que empunha a Master Sword.
+          <b>Zelda</b> é a princesa de Hyrule e costuma ter papel decisivo na história.
+          <b>Ganon</b>, ou Ganondorf, é o grande vilão que ameaça o reino. Cada jogo conta
+          uma nova versão dessa lenda, por isso os personagens mudam de aparência, mas
+          mantêm o mesmo espírito.
+        </p>
+      </article>
+    </main>
+
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>Davi Vitor Rocha &copy;</p>
+  </footer>
+  <div class="container-botao">
+<a href="../index.html"><button style="background-color: #990e0e; color: #ffffff; border: 4px solid #3bc9e2; border-radius: 30px; width: 60px; height: 60px;">Voltar</button></a>
+  </div>
+</body>
+</html>
