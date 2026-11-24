@@ -8,25 +8,109 @@
   <meta name="theme-color" content="#44034e">
   <link rel="icon" href="imagem/logo.svg" type="image/svg+xml">
 
-  <!-- Fontes locais: carregam já no início para o texto aparecer rápido -->
+  <!-- Fontes locais pré-carregadas -->
   <link rel="preload" href="fontes/sora-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fontes/sora-600.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- Imagem de fundo do topo -->
-  <link rel="preload" href="imagem/Toraxicure.svg" as="image">
-
-  <!-- Só o JS do AOS vem de fora (o CSS dele foi para o style.css) -->
+  <!-- Só o JS do AOS vem de fora -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS crítico (topo da página) embutido: nada bloqueia a primeira renderização -->
+  <style>
+/* FONTE SORA (local). font-display: optional = a fonte nunca troca no meio da tela, então não gera layout shift */
+@font-face{font-family:'Sora';src:url("fontes/sora-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:optional}
+@font-face{font-family:'Sora';src:url("fontes/sora-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:optional}
+
+/* BASE */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Sora',sans-serif;background-color:#44034e}
+img{width:100%;height:auto}
+a{text-decoration:none;cursor:pointer}
+a:focus-visible{outline:3px solid #f68e36;outline-offset:3px}
+iframe{border:0}
+.conteiner{max-width:1440px;margin:0 auto;padding:0 8px}
+
+/* ÍCONES (SVG inline) */
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.icone{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cabecalho-icones a,.rodape-icones a{display:block;padding:8px;color:#fff}
+
+/* ANIMAÇÕES AOS (só as usadas) */
+[data-aos="fade-left"]{opacity:0;transform:translate3d(100px,0,0);transition:opacity .5s ease,transform .5s ease}
+[data-aos="fade-left"].aos-animate{opacity:1;transform:none}
+[data-aos="flip-left"]{transform:perspective(2500px) rotateY(-100deg);backface-visibility:hidden;transition:transform 2s cubic-bezier(.215,.61,.355,1)}
+[data-aos="flip-left"].aos-animate{transform:perspective(2500px) rotateY(0)}
+
+/* CABEÇALHO */
+.fundo-inicio{position:relative;overflow-x:clip}
+.fundo-bg{position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none}
+.fundo-bg img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.fundo-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(to bottom,rgba(130,73,85,.652),#cf257d)}
+header{width:100%}
+.cabecalho-conteudo{display:flex;align-items:center;justify-content:space-between}
+.cabecalho-icones{display:flex;gap:6px}
+.cabecalho-icones a:hover svg{animation:sobe-e-desce .8s infinite alternate;color:#cf257d}
+@keyframes sobe-e-desce{from{transform:translateY(0) scale(1)}to{transform:translateY(-8px) scale(1.1)}}
+.cabecalho-logo{display:flex;align-items:center;justify-content:center;margin-top:14px}
+.cabecalho-botao{display:inline-block;border:1px solid #fff;padding:8px 24px;border-radius:4px;color:#fff;background-color:transparent;transition:background-color .7s}
+.cabecalho-botao:hover{border:1px solid #cf257d;background-color:#cf257d}
+
+/* HERO */
+.destaque{color:#fff;min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.destaque h1{text-align:center;line-height:150%;max-width:940px;font-size:46px}
+.destaque p{text-align:center;margin:14px 0}
+.botao-contato{padding:14px 28px;color:#fff;background-color:#cf257d;font-size:18px;font-weight:600;margin:14px 0}
+.botao-contato:hover{animation:pulsa .8s alternate infinite}
+@keyframes pulsa{from{transform:scale(1)}to{transform:scale(1.07)}}
+
+/* SOBRE */
+.sobre{background-color:#a42eb6;color:#fff;overflow:hidden}
+.sobre-conteudo{display:flex;align-items:center;justify-content:center;gap:14px;padding:34px 14px 64px 14px}
+.sobre-conteudo img{max-width:570px}
+.sobre-conteudo div{flex:1}
+.sobre-descricao h2{font-size:38px;margin-bottom:24px}
+.sobre-descricao p{margin-bottom:14px;line-height:150%}
+
+/* BOTÃO FIXO DO WHATSAPP */
+.botao-whatsapp{position:fixed;bottom:14px;right:24px;z-index:99}
+.botao-whatsapp img{max-width:74px;transition:transform .4s}
+.botao-whatsapp img:hover{transform:scale(1.1)}
+.botao-whatsapp .dica-texto{visibility:hidden;position:absolute;width:120px;top:8px;left:-144px;padding:6px;border-radius:8px;text-align:center;background-color:#232224;color:#fff;opacity:0;transition:opacity .4s}
+.botao-whatsapp:hover .dica-texto,.botao-whatsapp:focus-visible .dica-texto{visibility:visible;opacity:1}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width:768px){
+  .cabecalho-conteudo{width:100%;flex-direction:column;align-items:center;justify-content:center}
+  .cabecalho-icones{margin-top:8px}
+  .icone{width:34px;height:34px}
+  .cabecalho-logo img{width:160px;margin-top:46px}
+  .cabecalho-botao{display:none}
+  .destaque{min-height:60vh}
+  .destaque h1{font-size:34px;padding:0 14px;width:100%}
+  .destaque p{font-size:14px}
+  .sobre-conteudo{flex-direction:column}
+  .botao-whatsapp img{max-width:64px}
+}
+@media screen and (max-width:480px){
+  .destaque h1{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  [data-aos]{opacity:1!important;transform:none!important;transition:none!important}
+  .cabecalho-icones a:hover svg,.botao-contato:hover{animation:none}
+}
+  </style>
+
+  <!-- Restante do CSS (abaixo da dobra) carrega sem bloquear -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <!-- Se o JavaScript estiver desligado, nada fica escondido -->
   <noscript><style>[data-aos]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
-<!-- Ícones das redes sociais (SVG inline: substitui o Font Awesome, que pesava ~100 KB) -->
+<!-- Ícones das redes sociais (SVG inline) -->
 <svg class="sprite" aria-hidden="true" focusable="false">
   <symbol id="i-instagram" viewBox="0 0 24 24">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -42,6 +126,11 @@
 </svg>
 
 <div class="fundo-inicio">
+  <!-- Imagem de fundo do topo: agora é <img> no HTML, com prioridade alta (era o elemento do LCP) -->
+  <div class="fundo-bg" aria-hidden="true">
+    <img src="imagem/Toraxicure.svg" alt="" fetchpriority="high" decoding="async">
+  </div>
+
   <header>
     <nav class="cabecalho-conteudo conteiner">
       <div class="cabecalho-icones" data-aos="fade-left"
@@ -55,6 +144,7 @@
       <div class="cabecalho-logo" data-aos="flip-left"
            data-aos-easing="ease-out-cubic"
            data-aos-duration="2000">
+        <!-- TODO: colocar width e height reais do logo.svg aqui (evita layout shift) -->
         <img src="imagem/logo.svg" alt="Logo da Toraxicure" decoding="async">
       </div>
 
